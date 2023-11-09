@@ -199,7 +199,7 @@ export default function Home() {
       <p className="text-gray-600">
         We are promoting the language without endorsing any religious or
         political views. This website is not for profit; it is solely intended
-        to provide text sample and to submit feedback.
+        to provide text feedback message and steps to submit feedback.
       </p>
     </footer>
     </main>
