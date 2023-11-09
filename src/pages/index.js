@@ -55,7 +55,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between sm:m-20">
       <Image
         className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mb-4 max-w-sm"
         src="/kashmiri.png"
@@ -64,6 +64,7 @@ export default function Home() {
         height={37}
         priority
       />
+        <h2 className="text-2xl font-bold mb-4 text-center p-6">Copy the text below and follow the steps to submit your request to Google.</h2>
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
           <div className="flex justify-end mb-4">
@@ -150,7 +151,7 @@ export default function Home() {
           <p>Thank you for your attention and consideration.</p>
         </div>
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md mt-12">
-          <p>
+          <p className="text-xl">
             <b>Steps to submit feedback to google to add Kashmiri Language</b>
           </p>
           <ul>
@@ -169,7 +170,7 @@ export default function Home() {
               <b>Step 3:</b> Click Send Feedback as shown
               <span className="flex justify-center">
                 <Image
-                  className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mb-4 mt-4 max-w-sm border-2 border-blue-500"
+                  className=" max-w-full md:max-w-500 sm:max-w-full lg:max-w-500 -mx-2  mt-4 border-2 border-blue-500"
                   src="/one.png"
                   alt="kashur Logo"
                   width={400}
@@ -183,7 +184,7 @@ export default function Home() {
               <b>Step 4:</b> Paste the copied content and click Send
               <span className="flex justify-center">
                 <Image
-                  className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mb-4 mt-4 max-w-sm border-2 border-blue-500"
+                  className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full -mx-2 mt-4 border-2 border-blue-500"
                   src="/two.png"
                   alt="kashur Logo"
                   width={400}
