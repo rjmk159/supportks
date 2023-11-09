@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { BsClipboard, BsClipboard2CheckFill } from "react-icons/bs";
 import Image from "next/image";
+import * as amplitude from "@amplitude/analytics-browser";
 
 import { initGA, logPageView } from "../analytics";
 
@@ -44,6 +45,7 @@ export default function Home() {
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+    amplitude.track('CopyClicked');
   };
 
   useEffect(() => {
@@ -54,6 +56,10 @@ export default function Home() {
     logPageView();
   }, []);
 
+  useEffect(() => {
+    amplitude.init("503e6a3506e0eb2bf882ac730918f490");
+    amplitude.track('PageVisited');
+  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between sm:m-20">
       <Image
@@ -64,7 +70,10 @@ export default function Home() {
         height={37}
         priority
       />
-        <h2 className="text-2xl font-bold mb-4 text-center p-6">Copy the text below and follow the steps to submit your request to Google.</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center p-6">
+        Copy the text below and follow the steps to submit your request to
+        Google.
+      </h2>
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
           <div className="flex justify-end mb-4">
@@ -161,7 +170,7 @@ export default function Home() {
             <li>
               <b>Step 2:</b> Visit Google Translate Website
               <br /> Open your web browser and go to Google Translate.{" "}
-              <a className="text-blue-500 underline" href={link}>
+              <a className="text-blue-500 underline" onClick={()=>{amplitude.track('GoogleLinkOpened');}} href={link}>
                 Link
               </a>
             </li>
@@ -197,12 +206,12 @@ export default function Home() {
         </div>
       </div>
       <footer className="border-t border-gray-300 p-4 text-center w-full mt-24">
-      <p className="text-gray-600">
-        We are promoting the language without endorsing any religious or
-        political views. This website is not for profit; it is solely intended
-        to provide text feedback message and steps to submit feedback.
-      </p>
-    </footer>
+        <p className="text-gray-600">
+          We are promoting the language without endorsing any religious or
+          political views. This website is not for profit; it is solely intended
+          to provide text feedback message and steps to submit feedback.
+        </p>
+      </footer>
     </main>
   );
 }
