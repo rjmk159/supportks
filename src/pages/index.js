@@ -45,7 +45,7 @@ export default function Home() {
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
-    amplitude.track('CopyClicked');
+    amplitude.track("CopyClicked");
   };
 
   useEffect(() => {
@@ -58,8 +58,9 @@ export default function Home() {
 
   useEffect(() => {
     amplitude.init("503e6a3506e0eb2bf882ac730918f490");
-    amplitude.track('PageVisited');
+    amplitude.track("PageVisited");
   }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between sm:m-20">
       <Image
@@ -70,10 +71,24 @@ export default function Home() {
         height={37}
         priority
       />
-      <h2 className="text-2xl font-bold mb-4 text-center p-6">
-        Copy the text below and follow the steps to submit your request to
-        Google.
-      </h2>
+      <div className="max-w-600">
+        <h2 className="text-2xl font-bold mb-4 text-center p-6 ">
+          Copy the text below and follow the steps to submit your request to
+          Google to Add Kashmiri Language to
+          Google Translation Services.
+          <br />
+          <div
+            className="bg-yellow-200 border-l-4 border-yellow-400 text-yellow-800 p-2 mt-2"
+            role="alert"
+          >
+            <p>
+              نیچے دیے گئے مواد کو کاپی کریں اور گوگل ٹرانسلیشن سروسز میں کشمیری
+              زبان کو فارسی عربی رسم الخط (نستالق) میں شامل کرنے کے لیے گوگل کو
+              اپنی درخواست جمع کرانے کے لیے اقدامات پر عمل کریں۔
+            </p>
+          </div>
+        </h2>
+      </div>
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
           <div className="flex justify-end mb-4">
@@ -86,7 +101,7 @@ export default function Home() {
               ) : (
                 <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
               )}
-              {copied ? "Copied!" : "Copy Complete text"}
+              {copied ? "Copied!" : "Click here to Copy Complete text"}
             </button>
           </div>
           <p>
@@ -152,25 +167,43 @@ export default function Home() {
             </li>
           </ul>
           <p>
-            kindly request Google to initiate a dialogue with our community and
-            these experts to discuss the process of adding Kashmiri in Nastaliq
-            script to Google Translate, complete with vocal support. Together,
-            we can make this vision a reality, enhancing accessibility for all.
+            We kindly request Google to initiate a dialogue with our community
+            and these experts to discuss the process of adding Kashmiri in
+            Nastaliq script to Google Translate, complete with vocal support.
+            Together, we can make this vision a reality, enhancing accessibility
+            for all.
           </p>
           <p>Thank you for your attention and consideration.</p>
         </div>
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md mt-12">
-          <p className="text-xl">
+          <p className="text-xl text-center">
             <b>Steps to submit feedback to google to add Kashmiri Language</b>
+            <br />
           </p>
+          <div
+            className="bg-yellow-200 border-l-4 border-yellow-400 text-yellow-800 p-2 mt-2 mb-4"
+            role="alert"
+          >
+            <p className="text-center">
+              کشمیری زبان کو شامل کرنے کے لیے گوگل کو فیڈ بیک جمع کرنے کے
+              اقدامات
+            </p>
+          </div>
+
           <ul>
             <li>
-              <b>Step 1:</b> Copy the Above Content
+              <b>Step 1:</b> Copy the above Content
             </li>
             <li>
               <b>Step 2:</b> Visit Google Translate Website
               <br /> Open your web browser and go to Google Translate.{" "}
-              <a className="text-blue-500 underline" onClick={()=>{amplitude.track('GoogleLinkOpened');}} href={link}>
+              <a
+                className="text-blue-500 underline"
+                onClick={() => {
+                  amplitude.track("GoogleLinkOpened");
+                }}
+                href={link}
+              >
                 Link
               </a>
             </li>
