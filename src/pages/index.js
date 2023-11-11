@@ -5,6 +5,7 @@ import {
   BsClipboard2CheckFill,
   BsFileEarmarkWordFill,
   BsFileEarmarkPdf,
+  BsFillCameraVideoFill,
 } from "react-icons/bs";
 import Image from "next/image";
 import * as amplitude from "@amplitude/analytics-browser";
@@ -47,6 +48,7 @@ Thank you for your attention and consideration.
 const link = `https://translate.google.com/`;
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleCopyClick = () => {
     // const textToCopy = content.replace(/%20/g, " ");
@@ -57,6 +59,9 @@ export default function Home() {
     amplitude.track("CopyClicked");
   };
 
+  const handleToggleVideo = () => {
+    setShowVideo((curr) => !curr);
+  };
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
       initGA();
@@ -84,7 +89,7 @@ export default function Home() {
       <div className="max-w-600">
         <h2 className="text-2xl font-bold mb-4 text-center p-6 ">
           Copy the text below and follow the steps to submit your request to
-          Google to Add Kashmiri Language to Google Translation Services.
+          Google to add the Kashmiri language to Google Translation Services
           <br />
           <div
             className="bg-yellow-200 border-l-4 border-yellow-400 text-yellow-800 p-2 mt-2"
@@ -99,40 +104,39 @@ export default function Home() {
         </h2>
       </div>
       <div className="flexflex-col justify-between">
-      <div className="flex justify-center space-between mb-4 flex-w">
-            <CopyToClipboard
-              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
-              text={content}
-              onCopy={handleCopyClick}
-            >
-              <span>
-                {!copied ? (
-                  <BsClipboard className="w-5 h-5 mr-2" />
-                ) : (
-                  <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
-                )}
-                {copied ? "Copied!" : "Click here to Copy complete text"}
-              </span>
-            </CopyToClipboard>
-            <a
-              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
-              href="/format.docx"
-              download
-            >
-              <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
-              Download Word file
-            </a>
-            <a
-              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
-              href="/format.pdf"
-              download
-            >
-              <BsFileEarmarkPdf className="w-5 h-5 mr-2" />
-              Download PDF file
-            </a>
-          </div>
+        <div className="flex justify-center space-between mb-4 flex-w">
+          <CopyToClipboard
+            className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+            text={content}
+            onCopy={handleCopyClick}
+          >
+            <span>
+              {!copied ? (
+                <BsClipboard className="w-5 h-5 mr-2" />
+              ) : (
+                <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
+              )}
+              {copied ? "Copied!" : "Click here to Copy complete text"}
+            </span>
+          </CopyToClipboard>
+          <a
+            className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+            href="/format.docx"
+            download
+          >
+            <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
+            Download Word file
+          </a>
+          <a
+            className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+            href="/format.pdf"
+            download
+          >
+            <BsFileEarmarkPdf className="w-5 h-5 mr-2" />
+            Download PDF file
+          </a>
+        </div>
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md ">
-
           <p>
             <b>
               Subject: Request to Add Kashmiri Language its approved script
@@ -279,6 +283,28 @@ export default function Home() {
               </span>
             </li>
           </ul>
+
+          <span className="flex justify-center flex-col">
+            <button
+              onClick={handleToggleVideo}
+              style={{ maxWidth: 300, margin: "auto" }}
+              className="bg-blue-500  text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+            >
+              <BsFillCameraVideoFill className="w-5 h-5 mr-2" /> Watch Video!
+            </button>
+
+            {showVideo && (
+              <video
+                controls
+                // width="400"
+                // height="360"
+                className=" sm:max-w-full mt-2  border-2 border-blue-500"
+              >
+                <source src="/vdo.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </span>
         </div>
       </div>
       <footer className="border-t border-gray-300 p-4 text-center w-full mt-24">
