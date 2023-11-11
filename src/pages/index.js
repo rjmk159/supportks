@@ -97,23 +97,12 @@ export default function Home() {
             </p>
           </div>
         </h2>
-        <span className="or">OR</span>
-        <span className="download-contnr">
-          <a className="text-blue-500" href="/format.docx" download>
-            <BsFileEarmarkWordFill />
-            Download Word file
-          </a>
-          <a className="text-blue-500" href="/format.pdf" download>
-            <BsFileEarmarkPdf />
-            Download PDF file
-          </a>
-        </span>
       </div>
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-center space-between mb-4">
             <CopyToClipboard
-              className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex"
+              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
               text={content}
               onCopy={handleCopyClick}
             >
@@ -123,9 +112,25 @@ export default function Home() {
                 ) : (
                   <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
                 )}
-                {copied ? "Copied!" : "Click here to Copy Complete text"}
+                {copied ? "Copied!" : "Click here to Copy complete text"}
               </span>
             </CopyToClipboard>
+            <a
+              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+              href="/format.docx"
+              download
+            >
+              <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
+              Download Word file
+            </a>
+            <a
+              className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+              href="/format.pdf"
+              download
+            >
+              <BsFileEarmarkPdf className="w-5 h-5 mr-2" />
+              Download PDF file
+            </a>
           </div>
           <p>
             <b>
@@ -214,7 +219,7 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md mt-12">
           <p className="text-xl text-center">
-            <b>Steps to submit feedback to google to add Kashmiri Language</b>
+            <b>Steps to submit feedback to google</b>
             <br />
           </p>
           <div
