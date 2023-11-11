@@ -72,17 +72,6 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between sm:m-20">
-      <span className="download-contnr">
-     
-        <a className="text-blue-500" href="/format.docx" download>
-          <BsFileEarmarkWordFill />
-          Download Word file
-        </a>
-        <a className="text-blue-500" href="/format.pdf" download>
-          <BsFileEarmarkPdf />
-          Download PDF file
-        </a>
-      </span>
       <Image
         className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mb-4 max-w-sm"
         src="/kashmiri.png"
@@ -91,6 +80,7 @@ export default function Home() {
         height={37}
         priority
       />
+
       <div className="max-w-600">
         <h2 className="text-2xl font-bold mb-4 text-center p-6 ">
           Copy the text below and follow the steps to submit your request to
@@ -107,6 +97,17 @@ export default function Home() {
             </p>
           </div>
         </h2>
+        <span className="or">OR</span>
+        <span className="download-contnr">
+          <a className="text-blue-500" href="/format.docx" download>
+            <BsFileEarmarkWordFill />
+            Download Word file
+          </a>
+          <a className="text-blue-500" href="/format.pdf" download>
+            <BsFileEarmarkPdf />
+            Download PDF file
+          </a>
+        </span>
       </div>
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
