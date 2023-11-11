@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 
-import { BsClipboard, BsClipboard2CheckFill } from "react-icons/bs";
+import {
+  BsClipboard,
+  BsClipboard2CheckFill,
+  BsFileEarmarkWordFill,
+  BsFileEarmarkPdf,
+} from "react-icons/bs";
 import Image from "next/image";
 import * as amplitude from "@amplitude/analytics-browser";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { initGA, logPageView } from "../analytics";
 
-const content = `Subject: Request to Add Kashmiri Language in Perso-Arabic script (Nastaliq) to Google Translation Services
+const content = `Subject: Request to Add Kashmiri Language its approved script (Nastaliq) to Google Translation Services
 
 Dear Google Translation Team,
 
@@ -67,11 +72,22 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between sm:m-20">
+      <span className="download-contnr">
+     
+        <a className="text-blue-500" href="/format.docx" download>
+          <BsFileEarmarkWordFill />
+          Download Word file
+        </a>
+        <a className="text-blue-500" href="/format.pdf" download>
+          <BsFileEarmarkPdf />
+          Download PDF file
+        </a>
+      </span>
       <Image
         className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mb-4 max-w-sm"
         src="/kashmiri.png"
         alt="kashur Logo"
-        width={180}
+        width={140}
         height={37}
         priority
       />
@@ -101,12 +117,12 @@ export default function Home() {
               onCopy={handleCopyClick}
             >
               <span>
-              {!copied ? (
-                <BsClipboard className="w-5 h-5 mr-2" />
-              ) : (
-                <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
-              )}
-              {copied ? "Copied!" : "Click here to Copy Complete text"}
+                {!copied ? (
+                  <BsClipboard className="w-5 h-5 mr-2" />
+                ) : (
+                  <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
+                )}
+                {copied ? "Copied!" : "Click here to Copy Complete text"}
               </span>
             </CopyToClipboard>
           </div>
