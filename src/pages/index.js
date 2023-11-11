@@ -44,7 +44,10 @@ export default function Home() {
 
   const handleCopyClick = () => {
     const textToCopy = content;
+    textToCopy =  textToCopy.replace(/%20/g, ' ');
+    // console.log(decodeURIComponent(textToCopy))
     navigator.clipboard.writeText(decodeURIComponent(textToCopy));
+    
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
     amplitude.track("CopyClicked");
