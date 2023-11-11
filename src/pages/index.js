@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { BsClipboard, BsClipboard2CheckFill } from "react-icons/bs";
 import Image from "next/image";
 import * as amplitude from "@amplitude/analytics-browser";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { initGA, logPageView } from "../analytics";
 
@@ -43,9 +44,9 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClick = () => {
-    const textToCopy =  content.replace(/%20/g, ' ');
+    const textToCopy = content.replace(/%20/g, " ");
     navigator.clipboard.writeText(decodeURIComponent(textToCopy));
-    
+
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
     amplitude.track("CopyClicked");
@@ -94,17 +95,20 @@ export default function Home() {
       <div className="flexflex-col justify-between">
         <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md">
           <div className="flex justify-end mb-4">
-            <button
+            <CopyToClipboard
               className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex"
-              onClick={handleCopyClick}
+              text={content}
+              onCopy={handleCopyClick}
             >
+              <span>
               {!copied ? (
                 <BsClipboard className="w-5 h-5 mr-2" />
               ) : (
                 <BsClipboard2CheckFill className="w-5 h-5 mr-2" />
               )}
               {copied ? "Copied!" : "Click here to Copy Complete text"}
-            </button>
+              </span>
+            </CopyToClipboard>
           </div>
           <p>
             <b>
