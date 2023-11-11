@@ -49,8 +49,8 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClick = () => {
-    const textToCopy = content.replace(/%20/g, " ");
-    navigator.clipboard.writeText(decodeURIComponent(textToCopy));
+    // const textToCopy = content.replace(/%20/g, " ");
+    // navigator.clipboard.writeText(decodeURIComponent(textToCopy));
 
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -99,8 +99,7 @@ export default function Home() {
         </h2>
       </div>
       <div className="flexflex-col justify-between">
-        <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md ">
-          <div className="flex justify-center space-between mb-4 flex-w">
+      <div className="flex justify-center space-between mb-4 flex-w">
             <CopyToClipboard
               className="bg-blue-500 m-2 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
               text={content}
@@ -132,6 +131,8 @@ export default function Home() {
               Download PDF file
             </a>
           </div>
+        <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md ">
+
           <p>
             <b>
               Subject: Request to Add Kashmiri Language its approved script
@@ -217,7 +218,7 @@ export default function Home() {
           </p>
           <p>Thank you for your attention and consideration.</p>
         </div>
-        <div className="max-w-4xl mx-auto bg-white p-6 shadow-md rounded-md mt-12">
+        <div className="max-w-4xl mx-auto bg-blue-100 p-6 shadow-md rounded-md mt-12">
           <p className="text-xl text-center">
             <b>Steps to submit feedback to google</b>
             <br />
