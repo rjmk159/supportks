@@ -44,7 +44,7 @@ export default function Home() {
 
   const handleCopyClick = () => {
     const textToCopy = content;
-    navigator.clipboard.writeText(textToCopy);
+    navigator.clipboard.writeText(decodeURIComponent(textToCopy));
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
     amplitude.track("CopyClicked");
