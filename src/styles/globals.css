@@ -43,8 +43,12 @@ li {
     font-size: 1rem;
     line-height: 1.3rem;
   }
-}
 
+}
+.flex-w {
+  flex-wrap: wrap;
+  font-size: 12px;
+}
 .leading-6 {
   line-height: 1.5;
 }
