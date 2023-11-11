@@ -200,7 +200,7 @@ export default function Home() {
             className="bg-yellow-200 border-l-4 border-yellow-400 text-yellow-800 p-2 mt-2 mb-4"
             role="alert"
           >
-            <p className="text-center">
+            <p className="text-center leading-6">
               کشمیری زبان کو شامل کرنے کے لیے گوگل کو فیڈ بیک جمع کرنے کے
               اقدامات
             </p>
