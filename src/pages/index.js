@@ -43,9 +43,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClick = () => {
-    const textToCopy = content;
-    textToCopy =  textToCopy.replace(/%20/g, ' ');
-    // console.log(decodeURIComponent(textToCopy))
+    const textToCopy =  content.replace(/%20/g, ' ');
     navigator.clipboard.writeText(decodeURIComponent(textToCopy));
     
     setCopied(true);
@@ -85,7 +83,7 @@ export default function Home() {
             className="bg-yellow-200 border-l-4 border-yellow-400 text-yellow-800 p-2 mt-2"
             role="alert"
           >
-            <p>
+            <p className="leading-6">
               نیچے دیے گئے مواد کو کاپی کریں اور گوگل ٹرانسلیشن سروسز میں کشمیری
               میں شامل کرنے کے لیے گوگل کو اپنی درخواست جمع کرانے کے لیے اقدامات
               پر عمل کریں۔
