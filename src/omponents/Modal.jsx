@@ -7,10 +7,6 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
-    document.body.classList.add("overflow-hidden");
-    return;
-  });
-  useEffect(() => {
     // Add a class to the body when the component mounts
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
@@ -22,7 +18,7 @@ const Modal = ({ isOpen, onClose }) => {
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
-  }, []);
+  }, [isOpen]);
   return (
     <>
       {isOpen && (

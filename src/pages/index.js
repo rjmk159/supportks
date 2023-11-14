@@ -74,7 +74,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    amplitude.init("503e6a3506e0eb2bf882ac730918f490");
+    amplitude.init("503e6a3506e0eb2bf882ac730918f490", {
+      defaultTracking: true,
+    });
     amplitude.track("PageVisited");
   }, []);
 
@@ -112,18 +114,16 @@ export default function Home() {
       </h2>
 
       <div className="relative max-w-md  mt-4 w-600 p-6 bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a
+        <button
           className="absolute right-2 top-0 text-right text-blue-700 underline"
-          href="#"
           onClick={(e) => {
-            e.preventDefault();
-            helpRef?.current?.focus()
+            
+            window.scrollTo(0, helpRef?.current?.offsetTop || 3080)
             amplitude.track("HelpLink_SK");
-
           }}
         >
           Help!
-        </a>
+        </button>
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white mt-4">
           Steps to submit feedback to google
         </h5>
@@ -369,7 +369,9 @@ export default function Home() {
         <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Still Facing issues email us at
         </h2>
-        <p className="text-gray-400 mb-2">پھر بھی مسائل کا سامنا ہے ہمیں ای میل کریں۔</p>
+        <p className="text-gray-400 mb-2">
+          پھر بھی مسائل کا سامنا ہے ہمیں ای میل کریں۔
+        </p>
         <a href="mail://rjmk1359@gmail.com">rjmk1359@gmail.com</a> /{" "}
         <a href="mail://rjmk1359@gmail.com">amkjammukashmir@gmail.com</a>
       </div>
