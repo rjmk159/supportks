@@ -278,7 +278,7 @@ export default function Home() {
               download
             >
               <BsFileEarmarkPdf className="w-5 h-5 mr-2" />
-              Download PDF file / PDF ڈاؤن لوڈ کریں
+              Download PDF file / ڈاؤن لوڈ کریں
             </a>
           </li>
           <li>
@@ -291,7 +291,7 @@ export default function Home() {
               download
             >
               <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
-              Download Word file / Word فائل ڈاؤن لوڈ کریں۔
+              Download Word file / فائل ڈاؤن لوڈ کریں۔
             </a>
           </li>
           <li>And copy the content from there and Proceed from Step Two (2)</li>
