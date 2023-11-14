@@ -39,7 +39,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
       <div className="flex justify-between">
         <button
           onClick={handleThumbsUp}
-          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
         >
           {selected === "up" ? (
             <BsHandThumbsUpFill className="w-7 h-7 mr-2" />
@@ -50,7 +50,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
         </button>
         <button
           onClick={handleThumbsDown}
-          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
         >
           {selected === "down" ? (
             <BsHandThumbsDownFill className="w-7 h-7 mr-2" />
@@ -79,7 +79,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
       </div>
       <div className="mt-4">
         <button
-          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
           onClick={handleSubmitFeedbackCall}
         >
           Submit
