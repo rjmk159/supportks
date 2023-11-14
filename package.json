@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.3.3",
+    "axios": "^1.6.2",
     "next": "14.0.1",
     "prop-types": "^15.8.1",
     "react": "^18",
