@@ -150,7 +150,7 @@ export default function Home() {
                   ) : (
                     <BsClipboard2CheckFill className="w-3 h-5 mr-2" />
                   )}
-                  {copied ? "Copied!" : "Copy / کاپی"}
+                  {copied ? "Copied!" : "Copy Complete feedback text / کاپی"}
                 </span>
               </CopyToClipboard>
               <button
