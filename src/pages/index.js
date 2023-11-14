@@ -10,10 +10,10 @@ import {
 import Image from "next/image";
 import * as amplitude from "@amplitude/analytics-browser";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import Modal from "@/Components/Modal";
+import Modal from "@/components/Modal";
 
 import { initGA, logPageView } from "../analytics";
-import ThumbsForm from "@/Components/Form";
+import ThumbsForm from "@/components/Form";
 
 const content = `Request to Add Kashmiri Language its approved script (Nastaliq) to Google Translation Services
 
