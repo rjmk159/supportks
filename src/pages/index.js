@@ -114,7 +114,7 @@ export default function Home() {
               <CopyToClipboard
                 text={content}
                 onCopy={handleCopyClick}
-                className="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                className="animate-glow flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
                 <span>
                   {!copied ? (
@@ -122,13 +122,13 @@ export default function Home() {
                   ) : (
                     <BsClipboard2CheckFill className="w-3 h-5 mr-2" />
                   )}
-                  {copied ? "Copied!" : "Copy to  / کاپی"}
+                  {copied ? "Copied!" : "Copy / کاپی"}
                 </span>
               </CopyToClipboard>
               <button
                 type="button"
                 onClick={handleOpenModal}
-                className="py-2 px-2 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                className="py-2 px-2  mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
               >
                 View / مواد کو دیکھیں
               </button>
