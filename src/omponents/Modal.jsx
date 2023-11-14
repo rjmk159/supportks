@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsXLg } from "react-icons/bs";
 
 const Modal = ({ isOpen, onClose }) => {
@@ -6,14 +6,31 @@ const Modal = ({ isOpen, onClose }) => {
     onClose();
   };
 
+  useEffect(() => {
+    document.body.classList.add("overflow-hidden");
+    return;
+  });
+  useEffect(() => {
+    // Add a class to the body when the component mounts
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Remove the class from the body when the component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, []);
   return (
     <>
       {isOpen && (
         // <!-- Main modal -->
         <div class="main-cont overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-          <div class="main-cont-2 relative p-4 w-full max-w-2xl max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
             {/* <!-- Modal content --> */}
-            <div class="main-cont-3 relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
               {/* <!-- Modal header --> */}
               <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
@@ -24,7 +41,7 @@ const Modal = ({ isOpen, onClose }) => {
                   onClick={handleClose}
                   class="bg-transparent  rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                 >
-                  <BsXLg className="h-20 w-20"/>
+                  <BsXLg className="h-20 w-20" />
                 </button>
               </div>
               {/* <!-- Modal body --> */}

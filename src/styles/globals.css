@@ -65,16 +65,10 @@ ul {
 button {
   cursor: pointer;
 }
-/* .main-cont {
-  position: fixed;
-  z-index: 999;
-  background: rgba(0,0,0, 0.5);
+.main-cont {
+  background: rgb(0 0 0 / 78%);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.main-cont-3 {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.overflow-y-auto.p-6.flex-auto.max-h-\[60vh\] {
-  max-height: 60vh;
-  overflow-y: auto;
-} */

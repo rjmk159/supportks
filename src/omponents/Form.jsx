@@ -20,16 +20,17 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
     setSelected("down");
   };
   const handleSubmitFeedbackCall = () => {
+    if(showThankyou) return;
     handleSubmitFeedback(selected, message);
 
     setTimeout(() => {
       setShowThankyou(true);
-    }, 2000);
+    }, 1000);
     setTimeout(() => {
       setShowThankyou(false);
       setSelected("");
       setMessage("");
-    }, 2000);
+    }, 15000);
   };
   return !showThankyou ? (
     <>
