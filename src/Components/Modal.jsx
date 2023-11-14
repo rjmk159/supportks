@@ -1,5 +1,5 @@
-import { document } from "postcss";
-import React, { useEffect } from "react";
+
+import React from "react";
 
 const Modal = ({ isOpen, onClose }) => {
   const handleClose = () => {
@@ -9,21 +9,40 @@ const Modal = ({ isOpen, onClose }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-          <div className="relative w-auto max-w-3xl mx-auto my-6">
-            {/* Modal content */}
-            <div className="relative flex flex-col  bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none max-h-screen mx-4">
-              {/* Modal header */}
-              <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                <h3 className="text-xl font-semibold">Feedback Content</h3>
+        // <!-- Main modal -->
+        <div class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
+            {/* <!-- Modal content --> */}
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              {/* <!-- Modal header --> */}
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Feedback Content
+                </h3>
                 <button
-                  className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                  type="button"
                   onClick={handleClose}
+                  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  <span className="text-black">×</span>
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
                 </button>
               </div>
-              {/* Modal content with max height */}
+              {/* <!-- Modal body --> */}
               <div className="overflow-y-auto p-6 flex-auto max-h-[60vh]">
                 <p>
                   <b>
