@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import * as amplitude from "@amplitude/analytics-browser";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import Modal from "../components/Modal";
+import Modal from "@/Components/Modal";
 
 import { initGA, logPageView } from "../analytics";
 import ThumbsForm from "@/Components/Form";
@@ -239,6 +239,9 @@ export default function Home() {
             <p className="text-sm text-black-400">
               Congratulations you have submitted your feedback!
             </p>
+            <p className="text-gray-400">
+              مبارک ہو آپ نے اپنی رائے جمع کرائی ہے!
+            </p>
             <Image
               className=" max-w-full md:max-w-500 sm:max-w-full lg:max-w-500 -mx-2  mt-4 border-2 border-blue-500"
               src="/four-3.png"
@@ -257,9 +260,13 @@ export default function Home() {
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white">
           Facing issues
         </h5>
+        <p className="text-gray-400">
+          رائے جمع کرواتے وقت مسائل کا سامنا کرنا پڑتا ہے۔
+        </p>
         <h2 class="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           While copying
         </h2>
+        <p className="text-gray-400">کاپی کرتے وقت</p>
         <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>
             <a
@@ -271,7 +278,7 @@ export default function Home() {
               download
             >
               <BsFileEarmarkPdf className="w-5 h-5 mr-2" />
-              Download PDF file
+              Download PDF file / PDF ڈاؤن لوڈ کریں
             </a>
           </li>
           <li>
@@ -284,15 +291,18 @@ export default function Home() {
               download
             >
               <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
-              Download Word file
+              Download Word file / Word فائل ڈاؤن لوڈ کریں۔
             </a>
           </li>
           <li>And copy the content from there and Proceed from Step Two (2)</li>
         </ol>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="mb-2 text-md font-semibold text-gray-900 dark:text-white">
-          Send Feedback is not opening the feedback form
+        <h2 class="text-md font-semibold text-gray-900 dark:text-white">
+          Clicking Send Feedback is not opening the feedback form
         </h2>
+        <p className="mb-2 text-gray-400">
+          پر کلک کرنے سے فیڈ بیک فارم نہیں کھل رہا ہے۔ Send Feedback
+        </p>
         <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>
             Wait for 3 to 4 seconds after clicking the send feedback button
@@ -302,9 +312,12 @@ export default function Home() {
           </li>
         </ol>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="mb-2 text-md font-semibold text-gray-900 dark:text-white">
+        <h2 class=" text-md font-semibold text-gray-900 dark:text-white">
           Unable to paste the Copied content inside Textbox
         </h2>
+        <p className="text-gray-400 mb-2">
+          کاپی شدہ مواد کو ٹیکسٹ باکس کے اندر پیسٹ کرنے سے قاصر ہے۔
+        </p>
         <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>Tap on the Text Box</li>
           <li>Access the Paste Option</li>
@@ -325,32 +338,33 @@ export default function Home() {
         <h2 class="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           Watch Video to see how to submit feedback to google
         </h2>
-        <span className="flex justify-center flex-col">
-          <button
-            onClick={handleToggleVideo}
-            style={{ maxWidth: 300, margin: "auto" }}
-            className="bg-blue-900  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+        <p className="text-gray-400 mb-2">
+          گوگل کو تاثرات جمع کرنے کا طریقہ دیکھنے کے لیے ویڈیو دیکھیں
+        </p>
+        <button
+          onClick={handleToggleVideo}
+          style={{ maxWidth: 300, margin: "auto" }}
+          className="bg-blue-900  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+        >
+          <BsFillCameraVideoFill className="w-5 h-5 mr-2" />{" "}
+          {showVideo ? "Hide Video" : "Watch Video"}
+        </button>
+        {showVideo && (
+          <video
+            controls
+            // width="400"
+            // height="360"
+            className=" sm:max-w-full mt-2  border-2 border-blue-500"
           >
-            <BsFillCameraVideoFill className="w-5 h-5 mr-2" />{" "}
-            {showVideo ? "Hide Video" : "Watch Video"}
-          </button>
-
-          {showVideo && (
-            <video
-              controls
-              // width="400"
-              // height="360"
-              className=" sm:max-w-full mt-2  border-2 border-blue-500"
-            >
-              <source src="/main.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </span>
+            <source src="/main.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="mb-2 text-md font-semibold text-gray-900 dark:text-white">
-          Still Facing issues mail us at
+        <h2 class="text-md font-semibold text-gray-900 dark:text-white">
+          Still Facing issues email us at
         </h2>
+        <p className="text-gray-400 mb-2">پھر بھی مسائل کا سامنا ہے ہمیں ای میل کریں۔</p>
         <a href="mail://rjmk1359@gmail.com">rjmk1359@gmail.com</a> /{" "}
         <a href="mail://rjmk1359@gmail.com">amkjammukashmir@gmail.com</a>
       </div>
