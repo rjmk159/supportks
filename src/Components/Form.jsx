@@ -39,7 +39,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
       <div className="flex justify-between">
         <button
           onClick={handleThumbsUp}
-          className="inline-flex items-center px-4 py-1 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           {selected === "up" ? (
             <BsHandThumbsUpFill className="w-7 h-7 mr-2" />
@@ -50,7 +50,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
         </button>
         <button
           onClick={handleThumbsDown}
-          className="inline-flex items-center px-4 py-1 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           {selected === "down" ? (
             <BsHandThumbsDownFill className="w-7 h-7 mr-2" />
@@ -79,7 +79,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
       </div>
       <div className="mt-4">
         <button
-          className="inline-flex items-center px-4 py-1 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-2.5 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick={handleSubmitFeedbackCall}
         >
           Submit
