@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import {
   BsClipboard,
@@ -51,6 +51,7 @@ const link = `https://translate.google.com/`;
 export default function Home() {
   const [copied, setCopied] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const helpRef = useRef(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -99,8 +100,8 @@ export default function Home() {
         height={37}
         priority
       />
-      <div class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg p-8">
-        <h1 class="text-white text-2xl font-bold  rounded-lg text-center">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg p-8">
+        <h1 className="text-white text-2xl font-bold  rounded-lg text-center">
           Kindly provide your feedback to support the inclusion of the Kashmiri
           language in Google Translation Services, Its Free, Just your valuable
           3 Minutes!
@@ -113,9 +114,12 @@ export default function Home() {
       <div className="relative max-w-md  mt-4 w-600 p-6 bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a
           className="absolute right-2 top-0 text-right text-blue-700 underline"
-          href="#help-section"
-          onClick={() => {
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            helpRef?.current?.focus()
             amplitude.track("HelpLink_SK");
+
           }}
         >
           Help!
@@ -255,6 +259,7 @@ export default function Home() {
       </div>
       <div
         id="help-section"
+        ref={helpRef}
         className="max-w-md  mt-10  w-600 p-6 bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       >
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white">
@@ -263,11 +268,11 @@ export default function Home() {
         <p className="text-gray-400">
           رائے جمع کرواتے وقت مسائل کا سامنا کرنا پڑتا ہے۔
         </p>
-        <h2 class="mt-4 text-md font-semibold text-gray-900 dark:text-white">
+        <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           While copying
         </h2>
         <p className="text-gray-400">کاپی کرتے وقت</p>
-        <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
+        <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>
             <a
               className="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-2"
@@ -296,14 +301,14 @@ export default function Home() {
           </li>
           <li>And copy the content from there and Proceed from Step Two (2)</li>
         </ol>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="text-md font-semibold text-gray-900 dark:text-white">
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Clicking Send Feedback is not opening the feedback form
         </h2>
         <p className="mb-2 text-gray-400">
           پر کلک کرنے سے فیڈ بیک فارم نہیں کھل رہا ہے۔ Send Feedback
         </p>
-        <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
+        <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>
             Wait for 3 to 4 seconds after clicking the send feedback button
           </li>
@@ -311,14 +316,14 @@ export default function Home() {
             If nothing happens refresh the page and click send feedback again
           </li>
         </ol>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class=" text-md font-semibold text-gray-900 dark:text-white">
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <h2 className=" text-md font-semibold text-gray-900 dark:text-white">
           Unable to paste the Copied content inside Textbox
         </h2>
         <p className="text-gray-400 mb-2">
           کاپی شدہ مواد کو ٹیکسٹ باکس کے اندر پیسٹ کرنے سے قاصر ہے۔
         </p>
-        <ol class="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
+        <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>Tap on the Text Box</li>
           <li>Access the Paste Option</li>
           <li>Paste the Copied Content</li>
@@ -334,8 +339,8 @@ export default function Home() {
             </a>
           </li>
         </ol>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="mt-4 text-md font-semibold text-gray-900 dark:text-white">
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           Watch Video to see how to submit feedback to google
         </h2>
         <p className="text-gray-400 mb-2">
@@ -360,8 +365,8 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
         )}
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 class="text-md font-semibold text-gray-900 dark:text-white">
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Still Facing issues email us at
         </h2>
         <p className="text-gray-400 mb-2">پھر بھی مسائل کا سامنا ہے ہمیں ای میل کریں۔</p>
