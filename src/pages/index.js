@@ -90,7 +90,7 @@ export default function Home() {
             amplitude.track("HelpLink_SK");
           }}
         >
-          Help!
+          Help! / Watch Video (ویڈیو دیکھی)
         </button>
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white mt-4">
           Steps to submit feedback to google
@@ -237,6 +237,32 @@ export default function Home() {
           رائے جمع کرواتے وقت مسائل کا سامنا کرنا پڑتا ہے۔
         </p>
         <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
+          Watch Video to see how to submit feedback to google
+        </h2>
+        <p className="text-gray-400 mb-2">
+          گوگل کو تاثرات جمع کرنے کا طریقہ دیکھنے کے لیے ویڈیو دیکھیں
+        </p>
+        <button
+          onClick={handleToggleVideo}
+          style={{ maxWidth: 300, margin: "auto" }}
+          className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
+        >
+          <BsFillCameraVideoFill className="w-5 h-5 mr-2" />{" "}
+          {showVideo ? "Hide Video" : "Watch Video"}
+        </button>
+        {showVideo && (
+          <video
+            controls
+            // width="400"
+            // height="360"
+            className=" sm:max-w-full mt-2  border-2 border-blue-500"
+          >
+            <source src="/main.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           While copying
         </h2>
         <p className="text-gray-400">کاپی کرتے وقت</p>
@@ -307,32 +333,6 @@ export default function Home() {
             </a>
           </li>
         </ol>
-        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
-          Watch Video to see how to submit feedback to google
-        </h2>
-        <p className="text-gray-400 mb-2">
-          گوگل کو تاثرات جمع کرنے کا طریقہ دیکھنے کے لیے ویڈیو دیکھیں
-        </p>
-        <button
-          onClick={handleToggleVideo}
-          style={{ maxWidth: 300, margin: "auto" }}
-          className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
-        >
-          <BsFillCameraVideoFill className="w-5 h-5 mr-2" />{" "}
-          {showVideo ? "Hide Video" : "Watch Video"}
-        </button>
-        {showVideo && (
-          <video
-            controls
-            // width="400"
-            // height="360"
-            className=" sm:max-w-full mt-2  border-2 border-blue-500"
-          >
-            <source src="/main.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
         <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Still Facing issues email us at
