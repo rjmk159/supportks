@@ -95,11 +95,11 @@ export default function Home() {
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white mt-4">
           Steps to submit feedback to google
         </h5>
-        <p className="mb-4 text-gray-400">
+        <p className="mb-4 text-gray-500">
           گوگل کو فیڈ بیک جمع کرنے کے اقدامات
         </p>
 
-        <ol className="relative text-gray-500 border-s border-gray-400 dark:border-gray-700 dark:text-gray-400">
+        <ol className="relative text-gray-500 border-s border-gray-400 dark:border-gray-700 dark:text-gray-500">
           <li className="mb-10 ms-6">
             <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-grey-900">
               1
@@ -107,7 +107,7 @@ export default function Home() {
             <h3 className="font-medium leading-tight">
               Click Copy button to Copy the feedback text / Content
             </h3>
-            <p className="mb-2 text-gray-400">
+            <p className="mb-2 text-gray-500">
               فیڈ بیک ٹیکسٹ / مواد کو کاپی کرنے کے لیے بٹن پر کلک کریں۔
             </p>
             <div className="flex mb-4 flex-w">
@@ -128,7 +128,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={handleOpenModal}
-                className="py-2 px-2  mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                className="py-2 px-2  mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-500 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
               >
                 View / مواد کو دیکھیں
               </button>
@@ -139,7 +139,7 @@ export default function Home() {
               2
             </span>
             <h3 className="font-medium leading-tight">Click this link</h3>
-            <p className="text-gray-400">اس لنک پر کلک کریں۔</p>
+            <p className="text-gray-500">اس لنک پر کلک کریں۔</p>
             <p className="text-sm">
               <a
                 className="text-blue-800 font-medium underline font-semibold"
@@ -159,7 +159,7 @@ export default function Home() {
             <h3 className="font-medium leading-tight">
               Click <b>Send Feedback</b> text
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-500">
               بٹن پر کلک کریں۔ <b>Send Feedback</b>
             </p>
             <Image
@@ -178,7 +178,7 @@ export default function Home() {
             <h3 className="font-medium leading-tight">
               Paste the copied content{" "}
             </h3>
-            <p className="text-gray-400">کاپی شدہ مواد کو پیسٹ کریں۔</p>
+            <p className="text-gray-500">کاپی شدہ مواد کو پیسٹ کریں۔</p>
             <Image
               className=" max-w-full md:max-w-500 sm:max-w-full lg:max-w-500 -mx-2  mt-4 border-2 border-blue-500"
               src="/two-3.png"
@@ -193,7 +193,7 @@ export default function Home() {
               5
             </span>
             <h3 className="font-medium leading-tight">Click send</h3>
-            <p className="text-gray-400">پر کلک کریں۔ Send</p>
+            <p className="text-gray-500">پر کلک کریں۔ Send</p>
             <Image
               className=" max-w-full md:max-w-500 sm:max-w-full lg:max-w-500 -mx-2  mt-4 border-2 border-blue-500"
               src="/three-3.png"
@@ -211,7 +211,7 @@ export default function Home() {
             <p className="text-sm text-black-400">
               Congratulations you have submitted your feedback!
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-500">
               مبارک ہو آپ نے اپنی رائے جمع کرائی ہے!
             </p>
             <Image
@@ -233,13 +233,13 @@ export default function Home() {
         <h5 className=" text-2xl font-semibold tracking-tight text-gray-700 dark:text-white">
           Facing issues
         </h5>
-        <p className="text-gray-400">
+        <p className="text-gray-500">
           رائے جمع کرواتے وقت مسائل کا سامنا کرنا پڑتا ہے۔
         </p>
         <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           Watch Video to see how to submit feedback to google
         </h2>
-        <p className="text-gray-400 mb-2">
+        <p className="text-gray-500 mb-2">
           گوگل کو تاثرات جمع کرنے کا طریقہ دیکھنے کے لیے ویڈیو دیکھیں
         </p>
         <button
@@ -265,7 +265,7 @@ export default function Home() {
         <h2 className="mt-4 text-md font-semibold text-gray-900 dark:text-white">
           While copying
         </h2>
-        <p className="text-gray-400">کاپی کرتے وقت</p>
+        <p className="text-gray-500">کاپی کرتے وقت</p>
         <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
           <li>
             <a
@@ -290,7 +290,7 @@ export default function Home() {
               download
             >
               <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
-              Download Word file / فائل ڈاؤن لوڈ کریں۔
+              Download Word file 
             </a>
           </li>
           <li>And copy the content from there and Proceed from Step Two (2)</li>
@@ -299,7 +299,7 @@ export default function Home() {
         <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Clicking Send Feedback is not opening the feedback form
         </h2>
-        <p className="mb-2 text-gray-400">
+        <p className="mb-2 text-gray-500">
           پر کلک کرنے سے فیڈ بیک فارم نہیں کھل رہا ہے۔ Send Feedback
         </p>
         <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
@@ -314,7 +314,7 @@ export default function Home() {
         <h2 className=" text-md font-semibold text-gray-900 dark:text-white">
           Unable to paste the Copied content inside Textbox
         </h2>
-        <p className="text-gray-400 mb-2">
+        <p className="text-gray-500 mb-2">
           کاپی شدہ مواد کو ٹیکسٹ باکس کے اندر پیسٹ کرنے سے قاصر ہے۔
         </p>
         <ol className="ps-5 mt-2 space-y-1 list-disc list-inside text-sm">
@@ -337,7 +337,7 @@ export default function Home() {
         <h2 className="text-md font-semibold text-gray-900 dark:text-white">
           Still Facing issues email us at
         </h2>
-        <p className="text-gray-400 mb-2">
+        <p className="text-gray-500 mb-2">
           پھر بھی مسائل کا سامنا ہے ہمیں ای میل کریں۔
         </p>
         <a href="mail://rjmk1359@gmail.com">rjmk1359@gmail.com</a> /{" "}
