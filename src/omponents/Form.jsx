@@ -61,14 +61,14 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
           Waste of time
         </button>
       </div>
-      <div className="mt-4">
-        <label
+      {/* <div className="mt-4"> */}
+        {/* <label
           htmlFor="message"
           className="block text-sm font-medium text-gray-600"
         >
           Message
-        </label>
-        <textarea
+        </label> */}
+        {/* <textarea
           id="message"
           name="message"
           rows="4"
@@ -76,8 +76,8 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
           placeholder="Enter your feedback message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-      </div>
+        ></textarea> */}
+      {/* </div> */}
       <div className="mt-4">
         <button
           className="bg-blue-700  text-white font-bold py-2 px-2 rounded hover:bg-blue-800 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 flex items-center"
