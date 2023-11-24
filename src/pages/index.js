@@ -290,7 +290,7 @@ export default function Home() {
               download
             >
               <BsFileEarmarkWordFill className="w-5 h-5 mr-2" />
-              Download Word file 
+              Download Word file
             </a>
           </li>
           <li>And copy the content from there and Proceed from Step Two (2)</li>
@@ -348,9 +348,14 @@ export default function Home() {
       </div>
       <footer className="border-t border-gray-300 p-4 text-center w-full mt-24">
         <p className="text-gray-600">
-          We are promoting the language without endorsing any religious or
-          political views. This website is not for profit; it is solely intended
-          to provide text feedback message and steps to submit feedback.
+          Initiative Of <i>Center for youth development</i>. We are promoting
+          the language without endorsing any religious or political views. This
+          website is not for profit; it is solely intended to provide text
+          feedback message and steps to submit feedback.
+          <br />
+          for further information. email:{" "}
+          <a href="mail:cydsrinagar@gmail.com">cydsrinagar@gmail.com</a>, Ph :
+          <a href="tel:+911944064302">0194-4064302</a>
         </p>
       </footer>
       {/* <!-- Main modal --> */}

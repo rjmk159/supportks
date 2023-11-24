@@ -21,7 +21,7 @@ const ThumbsForm = ({ handleSubmitFeedback }) => {
   };
   const handleSubmitFeedbackCall = () => {
     if (showThankyou) return;
-    if (!message || !selected) return;
+    if (!message && !selected) return;
     handleSubmitFeedback(selected, message);
 
     setTimeout(() => {
