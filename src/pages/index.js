@@ -81,6 +81,7 @@ export default function Home() {
 
       <h4 className="m-4 text-red-500 text-xl">
         
+        
         <span className="text-gray-900 text-xl">Latest Update: </span> Microsoft has added a Kashmiri translator; now it's Google's turn. Keep
         Supporting. <a className="text-blue-500 underline text-xl" href="https://www.bing.com/translator?to=ks&setlang=be" target="_blank">Check it out!</a>
       </h4>
